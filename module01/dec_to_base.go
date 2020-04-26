@@ -10,5 +10,12 @@ package module01
 //   DecToBase(14, 2) => "1110"
 //
 func DecToBase(dec, base int) string {
-	return ""
+	charset:= "0123456789ABCDEF"
+	var binary string
+	for dec > 0 {
+		rem:= dec % base
+		binary = string(charset[rem]) + binary
+		dec = dec / base
+	}
+	return binary
 }
